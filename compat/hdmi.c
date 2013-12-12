@@ -16,6 +16,9 @@
 #include <linux/hdmi.h>
 #include <linux/string.h>
 
+/* Following set of API's are inherited from the Angstrom kernel and commenting
+ * out to remove the duplication of the HDMI API's added */
+#if 0
 static void hdmi_infoframe_checksum(void *buffer, size_t size)
 {
 	u8 *ptr = buffer;
@@ -310,4 +313,5 @@ ssize_t hdmi_vendor_infoframe_pack(struct hdmi_vendor_infoframe *frame,
 	return length;
 }
 EXPORT_SYMBOL(hdmi_vendor_infoframe_pack);
+#endif //if 0
 #endif /* (LINUX_VERSION_CODE >= KERNEL_VERSION(3,0,0)) */
